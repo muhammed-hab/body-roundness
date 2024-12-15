@@ -1,0 +1,371 @@
+{
+  "demographics": {
+    "default": {
+      "age": 30,
+      "heightCm": 180,
+      "massKg": 70,
+      "race": "white",
+      "sex": "male",
+      "waistCm": 60,
+      "preferredUnits": "metric"
+    },
+    "races": [
+      { "value": "white", "display": "White" },
+      { "value": "mexican", "display": "White (Hispanic)" },
+      { "value": "black", "display": "Black or African American" },
+      { "value": "asian", "display": "Asian" },
+      { "value": "native", "display": "American Indian or Alaskan Native" },
+      { "value": "islander", "display": "Native Hawaiian or Other Pacific Islander" }
+    ],
+    "sexes": [
+      { "value": "male", "display": "Male" },
+      { "value": "female", "display": "Female" }
+    ],
+    "bounds": {
+      "heightCm": {
+        "min": 0,
+        "max": 300
+      },
+      "age": {
+        "min": 0,
+        "max": 120
+      },
+      "waistCm": {
+        "min": 0,
+        "max": 500
+      },
+      "hipCm": {
+        "min": 0,
+        "max": 500
+      },
+      "massKg": {
+        "min": 0,
+        "max": 500
+      }
+    }
+  },
+  "markers": {
+    "ranges": {
+      "bmi": [
+        {
+          "ranges": [
+            {
+              "from": 15,
+              "to": 18.5,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 18.5,
+              "to": 25,
+              "type": "good",
+              "display": "Normal"
+            },
+            {
+              "from": 25,
+              "to": 30,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 30,
+              "to": 50,
+              "type": "bad",
+              "display": "High Risk"
+            }
+          ],
+          "for": []
+        }
+      ],
+      "fatPercent": [
+        {
+          "ranges": [
+            {
+              "from": 0,
+              "to": 0.2,
+              "type": "good",
+              "display": "Normal"
+            },
+            {
+              "from": 0.2,
+              "to": 0.25,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 0.25,
+              "to": 0.3,
+              "type": "okay",
+              "display": "Increased Risk"
+            },
+            {
+              "from": 0.3,
+              "to": 0.5,
+              "type": "bad",
+              "display": "High Risk"
+            }
+          ],
+          "for": [{
+            "sex": "male"
+          }]
+        },
+        {
+          "ranges": [
+            {
+              "from": 0,
+              "to": 0.3,
+              "type": "good",
+              "display": "Normal"
+            },
+            {
+              "from": 0.3,
+              "to": 0.35,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 0.35,
+              "to": 0.4,
+              "type": "okay",
+              "display": "Increased Risk"
+            },
+            {
+              "from": 0.4,
+              "to": 0.5,
+              "type": "bad",
+              "display": "High Risk"
+            }
+          ],
+          "for": [{
+            "sex": "female"
+          }]
+        }
+      ],
+      "vatPercent": [
+        {
+          "ranges": [
+            {
+              "from": 0,
+              "to": 0.21,
+              "type": "good",
+              "display": "Normal"
+            },
+            {
+              "from": 0.21,
+              "to": 0.33,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 0.33,
+              "to": 0.5,
+              "type": "bad",
+              "display": "High Risk"
+            }
+          ],
+          "for": [{
+            "sex": "male"
+          }]
+        },
+        {
+          "ranges": [
+            {
+              "from": 0,
+              "to": 0.15,
+              "type": "good",
+              "display": "Normal"
+            },
+            {
+              "from": 0.15,
+              "to": 0.24,
+              "type": "okay",
+              "display": "Elevated Risk"
+            },
+            {
+              "from": 0.24,
+              "to": 0.5,
+              "type": "bad",
+              "display": "High Risk"
+            }
+          ],
+          "for": [{
+            "sex": "female"
+          }]
+        }
+      ]
+    }
+  },
+  "equations": {
+    "fatPercent": [{
+      "equation": "(590.63448+age*-55.13828+heightCm*-47.70477+massKg*0.7854711+waistCm*16.507453+WE*28.370769+sex[male]*6511.5531+race[mexican]*3.8229821+race[white]*0.481886+race[black]*-1.226502+age*age*0.0059593+age*age*age*-0.000033+heightCm*heightCm*0.0622757+heightCm*heightCm*heightCm*-0.000119+age*heightCm*-0.007065+age*massKg*0.0095593+age*waistCm*0.3108042+age*WE*55.6078+age*sex[male]*-0.052109+age*race[white]*0.0008772+heightCm*massKg*-0.003195+heightCm*waistCm*-0.000259+heightCm*WE*36.62618+heightCm*sex[male]*0.2219889+massKg*waistCm*-0.000728+massKg*sex[male]*-0.858166+massKg*race[mexican]*-0.041358+waistCm*WE*-14.8073+waistCm*sex[male]*-31.21301+WE*sex[male]*-6509.418+sex[male]*race[mexican]*-6.406559+sex[male]*race[white]*-2.242913+age*massKg*waistCm*-0.000077+age*waistCm*WE*-0.303294+age*sex[male]*race[white]*0.0249095+heightCm*waistCm*sex[male]*0.0067997+massKg*waistCm*sex[male]*0.0058151+massKg*sex[male]*race[mexican]*0.066566+waistCm*WE*sex[male]*29.162688)*0.01",
+      "for": []
+    }],
+    "vatPercentWithHip": [{
+      "equation": "(-15779.54+1035.3811*sex[male]+-116.8609*race[black]+0.7300203*race[asian]+12625.38*race[white]+2.888873*age+1.473407*massKg+0.0392854*heightCm+16312.629*HE+15881.776*WE+10.506792*sex[male]*race[white]+-0.013903*sex[male]*age+-8.519493*sex[male]*massKg+0.1194025*sex[male]*heightCm+-694.6743*sex[male]*HE+-370.1911*sex[male]*WE+117.79367*race[black]*WE+0.0025746*race[white]*massKg+-0.019429*race[white]*heightCm+-13003.98*race[white]*HE+-12801.42*race[white]*WE+-2.894942*age*WE+-1.517225*massKg*HE+-16424.22*HE*WE+0.0677626*sex[male]*race[white]*massKg+-0.085847*sex[male]*race[white]*heightCm+8.5733503*sex[male]*massKg*HE+13187.65*race[white]*HE*WE)*0.01",
+      "for": []
+    }],
+    "vatPercentNoHip": [{
+      "equation": "(-226.1883+1741.6134*sex[male]+-76.26375*race[black]+-1.727863*race[asian]+3.102854*age+-0.015672*massKg+26.353687*heightCm+-17.41575*waistCm+225.51747*WE+-0.049147*sex[male]*massKg+-8.229665*sex[male]*heightCm+-1771.93*sex[male]*WE+76.827389*race[black]*WE+-0.042173*race[asian]*massKg+0.0675867*race[asian]*waistCm+-3.116654*age*WE+-26.26087*heightCm*WE+16.844516*waistCm*WE+8.404075*sex[male]*heightCm*WE)*0.01",
+      "for": []
+    }],
+    "eccL": [
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*21",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":18,
+            "max": 40
+          }
+        }]
+      },
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*23",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":40,
+            "max": 60
+          }
+        }]
+      },
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*24",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":60,
+            "max": 999
+          }
+        }]
+      },
+
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*8",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":18,
+            "max": 40
+          }
+        }]
+      },
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*11",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":40,
+            "max": 60
+          }
+        }]
+      },
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*13",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":60,
+            "max": 999
+          }
+        }]
+      }
+    ],
+    "eccU": [
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*33",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":18,
+            "max": 40
+          }
+        }]
+      },
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*40",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":40,
+            "max": 60
+          }
+        }]
+      },
+      {
+        "equation": ".995767+-.0000094*age+.0000769*heightCm+-.00064*36",
+        "for": [{
+          "sex": "female",
+          "age": {
+            "min":60,
+            "max": 999
+          }
+        }]
+      },
+
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*19",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":18,
+            "max": 40
+          }
+        }]
+      },
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*22",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":40,
+            "max": 60
+          }
+        }]
+      },
+      {
+        "equation": ".992986+-0.00000769*age+0.0000472*heightCm+-.00063*25",
+        "for": [{
+          "sex": "male",
+          "age": {
+            "min":60,
+            "max": 999
+          }
+        }]
+      }
+    ],
+    "bmi": [
+      {
+        "equation": "massKg*(heightCm*100^-1)^-2",
+        "for": []
+      }
+    ],
+    "WE": [
+      {
+        "equation": "((0.5 * heightCm)^2 + (-1)* (waistCm * 0.5 * 3.141592654^-1)^2)^0.5 * (heightCm * 0.5)^-1",
+        "for": []
+      }
+    ],
+    "HE": [
+      {
+        "equation": "((0.5 * heightCm)^2 + (-1)* (hipCm * 0.5 * 3.141592654^-1)^2)^0.5 * (heightCm * 0.5)^-1",
+        "for": []
+      }
+    ],
+    "roundness": [
+      {
+        "equation": "364.1724047+-365.5249684*WE",
+        "for": []
+      }],
+    "roundnessLower": [
+      {
+        "equation": "364.1724047+-365.5249684*eccL",
+        "for": []
+      }],
+    "roundnessUpper": [
+      {
+        "equation": "364.1724047+-365.5249684*eccU",
+        "for": []
+      }]
+  }
+}
